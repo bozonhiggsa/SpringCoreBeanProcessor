@@ -10,6 +10,10 @@ import org.springframework.beans.factory.annotation.Required;
 public class Message {
     private String message;
 
+    public Message() {
+        System.out.println("Constructor of Message is performed");
+    }
+
     public String getMessage() {
         return "Message: " + message;
     }
@@ -20,7 +24,7 @@ public class Message {
     }
 
     public void init() {
-        System.out.println("Bean is in an init phase.");
+        System.out.println("Bean is in an init phase");
     }
 
     public void destroy() {
