@@ -14,11 +14,12 @@ public class MessageWithPostBeanProcessorRunner {
 
         AbstractApplicationContext context = new ClassPathXmlApplicationContext("post-processor-config.xml");
 
+        System.out.println("==================================");
         System.out.println("Context is created");
-        Message message = (Message) context.getBean("message");
-        System.out.println("\n==================================");
-        System.out.println(message.getMessage());
-        System.out.println("==================================\n");
+        System.out.println("==================================");
+
+        context.refresh();
+
         context.registerShutdownHook();
     }
 }

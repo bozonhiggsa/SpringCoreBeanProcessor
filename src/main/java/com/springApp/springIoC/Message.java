@@ -3,28 +3,31 @@ package com.springApp.springIoC;
 import org.springframework.beans.factory.annotation.Required;
 
 /**
- * Model
+ * Bean class
  * @author Ihor Savchenko
  * @version 1.0
  */
 public class Message {
+
     private String message;
 
     public Message() {
-        System.out.println("Constructor of Message is performed");
+        System.out.println("This is first phase of Bean's Constructor. Message is: " + message);
     }
 
     public String getMessage() {
-        return "Message: " + message;
+        return message;
     }
 
     @Required
     public void setMessage(String message) {
         this.message = message;
+        System.out.println("Setter for Message is performed. Message is: " + this.message);
     }
 
     public void init() {
         System.out.println("Bean is in an init phase");
+        setMessage("This is third message");
     }
 
     public void destroy() {
